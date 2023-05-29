@@ -7,7 +7,9 @@ function App() {
   return (
     <div>
       <Nav/>
-      <Todos/>
+      <Todos data={"Enim coma non. "}/>
+      <Todos data={"Enim commodo velit veniam nisi magna non.EEnim commodo velit veniam nisi magna non.Enim commodo velit veniam nisi magna non.Enim commodo velit veniam nisi magna non.Enim commodo velit veniam nisi magna non.nim commodo velit veniam nisi magna non.  qui nostrud. Sit enim nulla nostrud im Lorem enim ex."}/>
+
     </div>
   )
 }

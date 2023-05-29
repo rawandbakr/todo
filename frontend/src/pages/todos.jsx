@@ -1,26 +1,38 @@
-import React from "react";
+import { data } from "autoprefixer";
+import React, { useState } from "react";
 
-export default function todos() {
+export default function todos(props) {
+
+  const [done, setDone] = useState(false);
+  function handelDone() {
+    setDone(!done);
+  }
   return (
-    <div className="flex flex-row items-center justify-center p-2 bg-white m-2 border-2 border-solid border-teal-500 rounded-2xl">
-       <div className="m-2 w-5/6 justify-between">
-        <p>
-          Veniam aute proident fugiat excepteur labore consequat nulla duis non
-          exercitation consectetur eiusmod esse veniam. Nisi pariatur Lorem
-          occaecat irure ullamco reprehenderit.
-          Veniam aute proident fugiat excepteur labore consequat nulla duis non
-          exercitation consectetur eiusmod esse veniam. Nisi pariatur Lorem
-          occaecat irure ullamco reprehenderit.
-          Veniam aute proident fugiat excepteur labore consequat nulla duis non
-          exercitation consectetur eiusmod esse veniam. Nisi pariatur Lorem
-          occaecat irure ullamco reprehenderit.
-        </p>
-      </div>
-      <div className="flex flex-col gap-2 md:flex-row">
-          <button className="bg-green-300 rounded-xl p-4 border-solid border-green-100 border-[1px] hover:bg-green-400 active:bg-green-500">Done</button>
-          <button className="bg-blue-300 rounded-xl p-4 border-solid border-blue-100 border-[1px] hover:bg-blue-400 active:bg-blue-500">Edit</button>
-          <button className="bg-red-300 rounded-xl p-4 border-solid border-red-100 border-[1px] hover:bg-red-400 active:bg-red-500">Delete</button>
+    <div className=" flex flex-row">
+      <div className="flex flex-row p-2 w-full justify-between bg-white m-2 border-2 border-solid border-teal-500 rounded-2xl ">
+        <div className="m-2">
+          <p className={`${done && `line-through`}`}>
+            {props.data}
+          </p>
         </div>
+        <div className="flex flex-col gap-2 md:flex-row">
+          <button
+            onClick={handelDone}
+            className={`${
+              done
+                ? `bg-orange-300 rounded-xl p-4 border-solid border-orange-100 border-[1px] hover:bg-orange-400 active:bg-orange-500`
+                : `bg-green-300 rounded-xl p-4 border-solid border-green-100 border-[1px] hover:bg-green-400 active:bg-green-500`
+            }`}>
+            {done ? "Undone" : "Done"}
+          </button>
+          <button className="bg-blue-300 rounded-xl p-4 border-solid border-blue-100 border-[1px] hover:bg-blue-400 active:bg-blue-500">
+            Edit
+          </button>
+          <button className="bg-red-300 rounded-xl p-4 border-solid border-red-100 border-[1px] hover:bg-red-400 active:bg-red-500">
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
