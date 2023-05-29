@@ -1,4 +1,4 @@
-import Nav from './components/nav'
+import Nav from './components/Nav'
 import Hero from './pages/hero'
 import Todos from './pages/todos'
 function App() {
