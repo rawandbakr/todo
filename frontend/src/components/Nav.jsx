@@ -3,7 +3,7 @@ import {FiSettings,FiPlus ,FiLogOut} from 'react-icons/fi'
 export default function Nav() {
   return (
     <nav className="bg-white h-24 flex flex-row items-center justify-around p-4 font-semibold ">
-      <h1>My todo</h1>
+      <h1 className='text-3xl'>My todo</h1>
       <ul className="flex flex-row gap-2">
         <li>
           <button 
